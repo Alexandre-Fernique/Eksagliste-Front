@@ -15,7 +15,7 @@ import { HomeComponent } from './Page/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
 import { VoteBoxComponent } from './Components/vote-box/vote-box.component';
 import { AdviceBoxComponent } from './Components/advice-box/advice-box.component';
-import { AuthService } from './auth.service';
+import { AuthService} from "./Services/Auth/auth.service";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
