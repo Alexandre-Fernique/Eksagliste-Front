@@ -1,0 +1,29 @@
+<div class="h-100">
+  <div class="login mx-auto  ">
+    <form >
+      <img class="img-fluid" src="/src/assets/bdgueux.gif">
+      <div class="row text-center mt-3">
+        <h1>Connexion</h1>
+      </div>
+      <div class="row">
+
+        <mat-form-field  appearance="outline" floatLabel="always">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="jean.louis" formControlName="url" required>
+          <span matSuffix >@etu.umontpellier.fr</span>
+          <mat-error>Entrez une Url</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Mot de passe</mat-label>
+          <input matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        <a href="forgotPassword" class="mb-3">Mot de passe oublié?</a>
+        <button mat-raised-button color="primary">Se connecter</button>
+      </div>
+    </form>
+  </div>
+</div>
+

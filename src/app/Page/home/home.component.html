@@ -1,0 +1,19 @@
+
+<div class="example-button-container">
+  <button mat-fab  color="primary" aria-label="Example icon button with a heart icon">
+    <mat-icon >person</mat-icon>
+          </button>
+</div>
+
+<div>
+  <h1>Envie de laisser une critque contructive au BDE?</h1>
+  <h2>On transmet le message</h2>
+  <mat-form-field appearance="outline">
+    <mat-label>Laisse un commentaire</mat-label>
+    <textarea #input matInput></textarea>
+    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+  </mat-form-field>
+  <button mat-button ><mat-icon >send</mat-icon>
+
+  </button>
+</div>
