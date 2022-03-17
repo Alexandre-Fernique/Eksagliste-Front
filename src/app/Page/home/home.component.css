@@ -1,0 +1,15 @@
+.home {
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+
+}
+.item{
+  padding: 50px;
+  min-width: 95%;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+}

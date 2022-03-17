@@ -13,21 +13,35 @@ import {MatButtonModule} from "@angular/material/button";
 import { ForgotPasswordComponent } from './Page/forgot-password/forgot-password.component';
 import { HomeComponent } from './Page/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
-
-
+import { VoteBoxComponent } from './Components/vote-box/vote-box.component';
+import { AdviceBoxComponent } from './Components/advice-box/advice-box.component';
+import { AuthService } from './auth.service';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { SigninComponent } from './Page/signin/signin.component';
+import { RootComponent } from './Components/root/root.component';
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
+  {path: "", component: AppComponent},
+  {path: "", redirectTo:"/", pathMatch: 'full'},
   {path:"forgotPassword",component:ForgotPasswordComponent},
-  {path: '**', component: LoginComponent}
-
+  {path:"login",component:LoginComponent},
+  {path:"signin",component:SigninComponent},
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    VoteBoxComponent,
+    AdviceBoxComponent,
+    NavbarComponent,
+    SigninComponent,
+    RootComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +52,13 @@ const routes: Routes = [
     MatInputModule,
     RouterModule.forRoot(routes),
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatToolbarModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  exports:[RouterModule],
+  providers: [AuthService],
+  bootstrap: [RootComponent]
 })
 export class AppModule { }

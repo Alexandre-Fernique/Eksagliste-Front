@@ -1,0 +1,37 @@
+.advice-container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+  width: 30%;
+  margin: auto;
+  min-width: 300px;
+}
+
+.advice-title {
+  padding: 5%;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.advice-form {
+  padding: 5%;
+  width: 100%;
+}
+
+.advice-btn {
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+  background-color: rgba(0,101,232,0.75);
+  color: white;
+}
+
+.advice-btn:hover {
+  background-color: rgba(0,101,232,0.95);
+  transition-duration: .3s;
+  color: white;
+}
