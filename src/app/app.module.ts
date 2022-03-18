@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
@@ -22,14 +21,20 @@ import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SigninComponent } from './Page/signin/signin.component';
 import { RootComponent } from './Components/root/root.component';
 import {ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {NotAuthGuard} from "./shared/Auth/notauth.guard";
+import {AuthInterceptor} from "./shared/Auth/auth.interceptor";
+import { CreatePasswordComponent } from './Page/create-password/create-password.component';
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+
 
 const routes: Routes = [
   {path: "", component: AppComponent},
   {path: "", redirectTo:"/", pathMatch: 'full'},
   {path:"forgotPassword",component:ForgotPasswordComponent},
-  {path:"login",component:LoginComponent},
+  {path:"login",component:LoginComponent,canActivate:[NotAuthGuard]},
   {path:"signin",component:SigninComponent},
+  {path:"createPassword/:uuid",component:CreatePasswordComponent}
 ]
 
 @NgModule({
@@ -42,7 +47,8 @@ const routes: Routes = [
     AdviceBoxComponent,
     NavbarComponent,
     SigninComponent,
-    RootComponent
+    RootComponent,
+    CreatePasswordComponent
   ],
     imports: [
         BrowserModule,
@@ -50,6 +56,7 @@ const routes: Routes = [
         HttpClientModule,
         MatProgressSpinnerModule,
         MatFormFieldModule,
+        MatSnackBarModule,
         MatSelectModule,
         MatInputModule,
         RouterModule.forRoot(routes),
@@ -61,7 +68,11 @@ const routes: Routes = [
         ReactiveFormsModule
     ],
   exports:[RouterModule],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [RootComponent]
 })
 export class AppModule { }
