@@ -4,6 +4,9 @@
   justify-items: center;
   align-items: center;
   width: 100%;
+  background-image: url("https://airwallpaper.com/wp-content/uploads/wall001/1080p-Wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 
 }
 .item{

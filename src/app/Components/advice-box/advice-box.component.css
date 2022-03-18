@@ -9,6 +9,7 @@
   width: 30%;
   margin: auto;
   min-width: 300px;
+  background-color: rgba(255,255,255,0.9);
 }
 
 .advice-title {
@@ -34,4 +35,8 @@
   background-color: rgba(0,101,232,0.95);
   transition-duration: .3s;
   color: white;
+}
+
+input {
+  background-color: #ffffff;
 }

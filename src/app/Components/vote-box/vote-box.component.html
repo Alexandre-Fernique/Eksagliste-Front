@@ -1,19 +1,24 @@
-<div class="advice-container">
-  <div class="advice-title">
-    <h1>Envie de laisser une critque contructive au BDE?</h1>
-    <h2>On transmet le message</h2>
-  </div>
-  <div>
-    <div>
-      <mat-form-field class="advice-form" appearance="outline">
-        <mat-label>Laisse un commentaire</mat-label>
-        <textarea #input matInput></textarea>
-        <mat-hint align="end">{{input.value?.length || 0}}/400</mat-hint>
-      </mat-form-field>
+<div class="vote">
+  <h1 class="vote-title">Qui mérite votre vote aujourd'hui ?</h1>
+  <div class="votes-container row align-content-sm-start">
+    <div class="vote-container card1 col-2">
+      <div>
+        <img [src]="imgURL1">
+      </div>
+      <div class="vote-name">
+        <h1>{{listName1}}</h1>
+      </div>
     </div>
-    <div>
-      <button class="advice-btn" mat-button ><mat-icon >send</mat-icon>
-      </button>
+    <div class="vote-container card2 col-2">
+      <div>
+        <img [src]="imgURL2">
+      </div>
+      <div class="vote-name">
+        <h1>{{listName2}}</h1>
+      </div>
     </div>
+
   </div>
 </div>
+
+
