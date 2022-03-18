@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService} from "../../auth.service";
+import {AuthService} from "../../Services/Auth/auth.service";
+
 
 @Component({
   selector: 'app-advice-box',

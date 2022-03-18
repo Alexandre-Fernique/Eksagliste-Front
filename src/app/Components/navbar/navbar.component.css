@@ -8,13 +8,13 @@
   margin-left: 68%;
   width: 100%;
 }
-
-.toolbarTitle {
-  text-align: center;
-  color: rgba(203,8,0,0.84);
-  font-family: Georgia;
+.mat-toolbar{
+  background-color: transparent;
 }
-
+.mat-drawer-container{
+  background-color: transparent;
+}
+/*
 .toolbar-btn {
   background-color: white;
   border: 1px solid rgba(124,153,255,0.95);
@@ -23,7 +23,7 @@
   background-color: rgba(124,153,255,0.95);
   color: white;
   border: 1px solid white;
-}
+}*/
 
 .menu-btn {
   position: absolute;
@@ -38,13 +38,16 @@
 }
 
 .login-btn {
-  margin-left: 10px;
-  margin-right: 1%;
+  margin-right: 10px;
+  margin-left: auto;
+
+
 }
-.register-btn {
+.button-container{
   margin-right: 10px;
   margin-left: auto;
 }
+
 
 /* Sidenav */
 
@@ -79,6 +82,4 @@
 }
 /* Content */
 
-.content {
-  min-height: 1080px;
-}
+

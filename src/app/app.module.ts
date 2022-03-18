@@ -15,13 +15,14 @@ import { HomeComponent } from './Page/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
 import { VoteBoxComponent } from './Components/vote-box/vote-box.component';
 import { AdviceBoxComponent } from './Components/advice-box/advice-box.component';
-import { AuthService} from "./Services/Auth/auth.service";
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatListModule} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './Components/navbar/navbar.component';
 import { SigninComponent } from './Page/signin/signin.component';
 import { RootComponent } from './Components/root/root.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   {path: "", component: AppComponent},
@@ -43,22 +44,24 @@ const routes: Routes = [
     SigninComponent,
     RootComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    RouterModule.forRoot(routes),
-    MatButtonModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatListModule,
-    MatToolbarModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatFormFieldModule,
+        MatSelectModule,
+        MatInputModule,
+        RouterModule.forRoot(routes),
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatToolbarModule,
+        ReactiveFormsModule
+    ],
   exports:[RouterModule],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [RootComponent]
 })
 export class AppModule { }

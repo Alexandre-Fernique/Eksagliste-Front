@@ -1,10 +1,11 @@
 <!-- ToolBar -->
 <mat-toolbar class="toolbar">
-  <button class="toolbarTitle" mat-button routerLink="/"><h1>EKSAGLISTE</h1></button>
-  <button class="square-btn register-btn toolbar-btn" mat-button routerLink="/signin">S'inscrire</button>
-  <button class="square-btn login-btn toolbar-btn" mat-button routerLink="/login">Se connecter</button>
-  <div class="example-button-container">
-    <button mat-fab  color="primary" aria-label="Example icon button with a heart icon">
+
+
+  <button color="primary" [hidden]="isAuth" class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se connecter</button>
+  <button color="primary" [hidden]="!isAuth" (click)="logout()" class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se déconnecter</button>
+  <div class="button-container mt-3" [hidden]="!isAuth">
+    <button mat-fab (click)="logout()" color="primary" aria-label="Example icon button with a heart icon">
       <mat-icon >person</mat-icon>
     </button>
   </div>
@@ -14,7 +15,7 @@
 <mat-drawer-container class="sidenav-container" autosize>
 
   <!-- SideNavBar -->
-  <mat-drawer #drawer class="sidenav" mode="side">
+  <mat-drawer >
 
   </mat-drawer>
 
