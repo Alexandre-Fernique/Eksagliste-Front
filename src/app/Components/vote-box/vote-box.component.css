@@ -34,6 +34,7 @@
   width: 100%;
   padding: 50px;
   border-radius: 5px;
+  border: 0px;
   box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
   width: 10%;
   min-width: 125px;
@@ -80,4 +81,3 @@ img {
   -webkit-transform: scale(2);
 
 }
-

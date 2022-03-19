@@ -1,23 +1,16 @@
 <div class="vote">
   <h1 class="vote-title">Qui mérite votre vote aujourd'hui ?</h1>
   <div class="votes-container row align-content-sm-start">
-    <div class="vote-container card1 col-2">
+    <button class="vote-container card1 col-2" (click)="vote(listName1)">
       <div>
         <img [src]="imgURL1">
       </div>
-      <div class="vote-name">
-        <h1>{{listName1}}</h1>
-      </div>
-    </div>
-    <div class="vote-container card2 col-2">
+    </button>
+    <button class="vote-container card2 col-2" (click)="vote(listName2)">
       <div>
         <img [src]="imgURL2">
       </div>
-      <div class="vote-name">
-        <h1>{{listName2}}</h1>
-      </div>
-    </div>
-
+    </button>
   </div>
 </div>
 

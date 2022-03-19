@@ -22,11 +22,10 @@ import { SigninComponent } from './Page/signin/signin.component';
 import { RootComponent } from './Components/root/root.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
-import {NotAuthGuard} from "./shared/Auth/notauth.guard";
+import {NotAuthGuard} from './shared/Auth/notauth.guard'
 import {AuthInterceptor} from "./shared/Auth/auth.interceptor";
-import { CreatePasswordComponent } from './Page/create-password/create-password.component';
+import { CreatePasswordComponent } from "./Page/create-password/create-password.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-
 
 const routes: Routes = [
   {path: "", component: AppComponent},
@@ -65,7 +64,7 @@ const routes: Routes = [
         MatSidenavModule,
         MatListModule,
         MatToolbarModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
     ],
   exports:[RouterModule],
   providers: [{

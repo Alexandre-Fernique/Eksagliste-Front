@@ -13,4 +13,8 @@ export class VoteBoxComponent {
   @Input() imgURL2 : String = "https://wonder-day.com/wp-content/uploads/2020/10/wonder-day-among-us-21.png"
   @Input() listName2 : String = "Liste 2"
 
+  vote(listname : String){
+
+  }
+
 }
