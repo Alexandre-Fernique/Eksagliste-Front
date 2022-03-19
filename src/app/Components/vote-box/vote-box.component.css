@@ -7,7 +7,7 @@
 
   padding: 50px;
   border-radius: 5px;
-  width: 10%;
+  width: 90%;
   margin: auto;
   min-width: 500px;
   background-color: rgba(255,255,255,0);
@@ -19,11 +19,7 @@
   text-align: center;
   margin: auto;
   padding: 5%;
-  width: 50%;
-  min-width: 500px;
-  border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
-  background-color: rgba(255,255,255,0.9);
+  width: 90%;
 }
 
 .vote-container {
@@ -31,12 +27,11 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-  width: 100%;
   padding: 50px;
   border-radius: 5px;
   border: 0px;
   box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
-  width: 10%;
+  width: 30%;
   min-width: 125px;
   background-color: rgba(255,255,255,0.85);
 }

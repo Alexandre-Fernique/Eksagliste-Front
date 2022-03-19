@@ -1,8 +1,5 @@
 .body {
-  /*
-  background-image: url("https://www.polytech.umontpellier.fr/images/2021/01/15/visite-virtuelle-web.jpg");
-   */
-  justify-content: center;
-  text-align: center;
-  align-items: center;
+  background-image: url("https://airwallpaper.com/wp-content/uploads/wall001/1080p-Wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
