@@ -77,10 +77,11 @@ img {
 }
 
 .vote-title{
+  width: 90%;
   color: white;
   font-size: 80px;
   line-height: 100px;
-
+  padding: 20%;
   font-family: 'Manga Temple', sans-serif;
 
   -webkit-text-stroke: 5px black;
