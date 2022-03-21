@@ -16,11 +16,11 @@ export class CreatePasswordComponent implements OnInit {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmPassword')?.value
     return pass === confirmPass ? null : { notSame: true }
-
   }
   form: FormGroup = new FormGroup({
-       password: new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(40)]),
-       confirmPassword: new FormControl("",[Validators.required,Validators.maxLength(40),]),
+      email: new FormControl("",[Validators.required,Validators.maxLength(40)]),
+      password: new FormControl("",[Validators.required,Validators.minLength(8),Validators.maxLength(40)]),
+      confirmPassword: new FormControl("",[Validators.required,Validators.maxLength(40),]),
 
   },{validators:this.checkPasswords});
   //TODO faire la validation identique
@@ -32,9 +32,12 @@ export class CreatePasswordComponent implements OnInit {
   validate(){
     this.user.setPassword(this.route.url.split("/")[-1],this.form.value).subscribe({
       error:(e)=>{
+        this.erreur = true
 
       },
-      complete:()=>{}
+      complete:()=>{
+
+      }
     })
   }
 

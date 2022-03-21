@@ -4,7 +4,7 @@
 
   <button color="primary" *ngIf="!auth.isAuthenticated() && !router.url.endsWith('login') && !router.url.includes('createPassword') " class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se connecter</button>
   <button color="primary" *ngIf="auth.isAuthenticated()" (click)="logout()" class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se déconnecter</button>
-  <div class="button-container mt-3" *ngIf="auth.isAuthenticated()">
+  <div class="button-container mt-3" *ngIf="auth.isAuthenticated()" hidden="true">
     <button mat-fab (click)="logout()" color="primary" aria-label="Example icon button with a heart icon">
       <mat-icon >person</mat-icon>
     </button>

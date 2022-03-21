@@ -20,7 +20,17 @@ export class ListeService {
     return this.http.post(environment.api+"/liste/vote",data,this.httpOptions)
   }
   get(){
-    return this.http.get(environment.api+"/liste/count",this.httpOptions)
+    return this.http.get<Array<{
+      id:number,
+      title:string,
+      image:string,
+      _count:{
+        vote:number
+      }
+    }>>(environment.api+"/liste/count",this.httpOptions)
+  }
+  voteUser(){
+    return  this.http.get<any>(environment.api+"/liste/voteUser",this.httpOptions)
   }
 
 }

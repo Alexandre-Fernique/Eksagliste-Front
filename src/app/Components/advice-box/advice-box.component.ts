@@ -20,7 +20,7 @@ export class AdviceBoxComponent {
   }
   openSnackBar(text:string) {
     this._snackBar.open(text, '', {
-      horizontalPosition: "right",
+      horizontalPosition: "left",
       verticalPosition: "top",
       duration:3000
     });
