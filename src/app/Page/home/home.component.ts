@@ -1,21 +1,27 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../Services/Auth/auth.service";
 import {Question} from "../../Class/question/question";
+import {QuestionService} from "../../Services/Question/question.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent{
+export class HomeComponent implements OnInit {
 
-  questions : Question[] = [
-    new Question("Flibustech","Polyçao","Qui est le plus rapide pour livrer ?",25,75),
-    new Question("Flibustech","Polyçao","Qui prépare les meilleures crêpes ?",75,32)
-  ]
+  questions!: Question[];
 
-  constructor(public auth: AuthService) {
+  constructor(public auth: AuthService,
+              public questionService: QuestionService) {
     this.auth.handleAuthentication();
   }
+
+  ngOnInit(): void {
+        this.questions = this.questionService.get()
+    }
+
+
 
 }

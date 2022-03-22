@@ -4,7 +4,9 @@
     <app-vote-box></app-vote-box>
   </div>
   <div class="item">
-    <app-question-box [question]="questions[1]"></app-question-box>
+    <li *ngFor="let question of questions" class="collection-item">
+      <app-question-box [question]="question"></app-question-box>
+    </li>
   </div>
   <div class="item">
     <app-advice-box></app-advice-box>
