@@ -29,8 +29,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {QuestionBoxComponent} from './Components/question-box/question-box.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { QuestionSliderComponent } from './Components/question-slider/question-slider.component';
-import { DisplayInfoComponent } from './Components/display-info/display-info.component';
-import { MatDialogModule } from '@angular/material/dialog';
+
 
 
 const routes: Routes = [
