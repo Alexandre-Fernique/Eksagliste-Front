@@ -14,6 +14,7 @@ export class SigninComponent implements OnInit {
   erreur=false;
   annees=[1,2,3,4,5]
   formations=["PEIP","IG","MI","MSI","EGC","STE","SE","MEA","MAT","DO","GBA"]
+  loadingData=false;
 
   checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
     let pass = group.get('password')?.value;
@@ -46,16 +47,18 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
   validate(){
+    this.loadingData=true
     let data = this.form.value
     data.email = data.email + "@etu.umontpellier.fr"
     this.user.create(data).subscribe({
       error:(e)=>{
         console.log(e)
+        this.loadingData=false
         this.erreur = true
 
       },
       complete:()=>{
-        console.log("ok")
+        this.loadingData=false
         this.router.navigate(['/']);
 
       }

@@ -30,7 +30,11 @@
           <mat-error>Entrez un mot de passe de 8 caractère minimum</mat-error>
         </mat-form-field>
         <a href="forgotPassword" class="mb-3" >Mot de passe oublié?</a>
-        <button mat-raised-button class="mb-3" color="primary" [disabled]="!form.valid" type="submit">Se connecter</button>
+        <div class="d-flex justify-content-center">
+          <mat-spinner diameter="50" *ngIf="loadingData"></mat-spinner>
+        </div>
+
+        <button mat-raised-button class="mb-3" color="primary" [disabled]="!form.valid && !loadingData" type="submit">Se connecter</button>
         <mat-icon class="cursor" (click)="router.navigate(['/'])">arrow_back</mat-icon>
       </div>
     </form>
