@@ -11,6 +11,7 @@ import {Router} from "@angular/router";
 export class LoginComponent implements OnInit {
   hide = true;
   erreur=false;
+  loadingData=false;
 
   form: FormGroup = new FormGroup({
     email: new FormControl("",[Validators.required,Validators.maxLength(50)]),
@@ -22,14 +23,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
   validate(){
+    this.loadingData=true
 
     this.auth.login(this.form.get("email")?.value+"@etu.umontpellier.fr",this.form.get("password")?.value).subscribe({
       next:(value) => {
         localStorage.setItem('access_token',value.acess_token)
+        this.loadingData=false
         this.router.navigate(['/']);
 
       },error:(er)=>{
         this.erreur=true;
+        this.loadingData=false
       }
     })
   }
