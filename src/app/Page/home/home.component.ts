@@ -11,7 +11,8 @@ import {Observable} from "rxjs";
 })
 export class HomeComponent implements OnInit {
 
-  questions!: Observable<Question[]>;
+  questions!: Question[];
+  isChange: number = 0
 
   constructor(public auth: AuthService,
               public questionService: QuestionService) {
@@ -19,10 +20,21 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log("ngOnInit")
-    this.questions = this.questionService.get()
+    this.getQuestions()
   }
 
+  getQuestions(){
+    this.questionService.get().subscribe(questions => {
+        this.questions = questions
+      }
+    )
+  }
+
+  changeDetected($event: number) {
+    this.isChange += $event
+    this.getQuestions()
+    this.getQuestions()
+  }
 
 
 }

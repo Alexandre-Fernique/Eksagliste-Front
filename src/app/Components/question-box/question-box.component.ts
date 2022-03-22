@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from "../../Class/question/question";
 import {Liste} from "../../Class/liste";
 import {ListeService} from "../../Services/Liste/liste.service";
@@ -15,6 +15,8 @@ export class QuestionBoxComponent{
   liste1:Liste =new Liste(0,"NaN","erreur.png",-1)
   liste2:Liste =new Liste(0,"NaN","erreur.png",-1)
   moreinfo : boolean = false
+
+  @Output() isChangeEvent = new EventEmitter<number>();
 
   constructor(public listeRequest:ListeService,
               private _snackBar: MatSnackBar,
@@ -39,8 +41,9 @@ export class QuestionBoxComponent{
   vote(listeId: number){
     console.log(this.question)
     if(this.question != null) {
-      console.log("coucouc")
+      console.log("ici")
       this.questionService.vote(listeId, this.question.questionId)
+      this.isChangeEvent.emit(1)
     }
   }
 

@@ -47,8 +47,6 @@ export class VoteBoxComponent {
     })
   }
 
-
-
   vote(liste : Liste){
     this.listeRequest.vote(liste.id).subscribe({
       error:()=>{
