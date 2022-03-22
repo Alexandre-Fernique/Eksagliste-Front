@@ -1,5 +1,23 @@
-@import url('http://fonts.cdnfonts.com/css/manga-temple');
-@import url('http://fonts.cdnfonts.com/css/mortal-kombat');
+@font-face {
+  font-family: 'Manga Temple';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Manga Temple'), url('https://fonts.cdnfonts.com/s/1803/mangat.woff') format('woff');
+}
+@font-face {
+  font-family: 'Manga Temple';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Manga Temple'), url('https://fonts.cdnfonts.com/s/1803/mangati.woff') format('woff');
+}
+@font-face {
+  font-family: 'Manga Temple';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Manga Temple'), url('https://fonts.cdnfonts.com/s/1803/mangatb.woff') format('woff');
+}
+
+
 
 .votes-container {
 
@@ -75,9 +93,10 @@ img {
 .vote-title{
   color: white;
   font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
-  line-height: 100px;
+
   font-family: 'Manga Temple', sans-serif;
   -webkit-text-stroke: 0.05em black;
+  
 }
 .green{
   color: lawngreen;
