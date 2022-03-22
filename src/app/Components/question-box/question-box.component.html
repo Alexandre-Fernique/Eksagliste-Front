@@ -5,8 +5,8 @@
   <div class="question-content">
 
     <div class="question-btn row">
-      <button class="btn-gauche col-2">{{question.listeGauche}}</button>
-      <button class="btn-droite col -2">{{question.listeDroite}}</button>
+      <button class="btn-gauche col-2" (click)="vote(question.listeGaucheId)">{{question.listeGauche}}</button>
+      <button class="btn-droite col -2"(click)="vote(question.listeDroiteId)">{{question.listeDroite}}</button>
     </div>
 
     <div class="progress">

@@ -15,35 +15,36 @@ export class QuestionService {
   }
 
   jsonToQuestion(json: any): Question {
-    console.log(json)
     var listeDeDroite: string = ""
     var voteListeDeDroite: number = 0
     var listeDeGauche: string = ""
     var voteListeDeGauche: number = 0
-    console.log("coucou")
+    var listeDeDroiteId: number = 0
+    var listeDeGaucheId: number = 0
     for (var j=0; j<json.listes.length; j++) {
       if (json.listes[j].liste === "BabyListe") {
-        console.log("cest egale")
         listeDeDroite = json.listes[j].liste
         voteListeDeDroite = json.listes[j].vote
+        listeDeDroiteId = json.listes[j].id
       } else {
         listeDeGauche = json.listes[j].liste
         voteListeDeGauche = json.listes[j].vote
+        listeDeGaucheId = json.listes[j].id
       }
     }
-    return new Question(listeDeGauche, listeDeDroite, json.question, voteListeDeGauche, voteListeDeDroite)
+    return new Question(json.questionId, listeDeGauche, listeDeDroite, json.question, voteListeDeGauche, voteListeDeDroite, listeDeDroiteId, listeDeGaucheId)
   }
 
   vote(listId: number, questionId: String) {
     let data = {
-      listeId: listId,
-      questionId: questionId
+      question: questionId,
+      liste: listId
     }
-    return this.http.post(environment.api + "/question/vote", data, this.httpOptions)
+    console.log(data)
+    return this.http.post(environment.api + "/question/vote", data, this.httpOptions).subscribe()
   }
 
   get(): Observable<Question[]> {
-    console.log("coucou")
     return this.http.get<Question[]>(environment.api + "/question/vote", this.httpOptions).pipe(
       map(data =>
         data.map(json => this.jsonToQuestion(json))));
