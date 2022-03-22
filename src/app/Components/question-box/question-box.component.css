@@ -112,11 +112,13 @@
 }
 
 .info1{
+  color: red;
   padding: 5%;
   width: 50%;
 }
 
 .info2{
+  color: #009638;
   padding: 5%;
   width: 50%;
 }

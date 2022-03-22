@@ -22,12 +22,12 @@
     <div *ngIf="moreinfo" class="question-info">
       <div class="row">
         <div class="col-2 info1">
-          <p>{{question.listeGauche}}</p>
+          <p><strong>{{question.listeGauche}}</strong></p>
           <p>{{question.percentage.toFixed(2)}} %</p>
           <p>{{question.nbVoteGauche}} votes</p>
         </div>
         <div class="col-2 info2">
-          <p>{{question.listeDroite}}</p>
+          <p><strong>{{question.listeDroite}}</strong></p>
           <p>{{(100 - question.percentage).toFixed(2)}} %</p>
           <p>{{question.nbVoteDroite}} votes</p>
         </div>

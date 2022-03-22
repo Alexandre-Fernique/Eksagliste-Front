@@ -26,7 +26,7 @@ import {NotAuthGuard} from './shared/Auth/notauth.guard'
 import {AuthInterceptor} from "./shared/Auth/auth.interceptor";
 import { CreatePasswordComponent } from "./Page/create-password/create-password.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import { QuestionBoxComponent } from './Components/question-box/question-box.component';
+import {QuestionBoxComponent} from './Components/question-box/question-box.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 const routes: Routes = [
@@ -50,7 +50,7 @@ const routes: Routes = [
     SigninComponent,
     RootComponent,
     CreatePasswordComponent,
-    QuestionBoxComponent
+    QuestionBoxComponent,
   ],
     imports: [
         BrowserModule,
