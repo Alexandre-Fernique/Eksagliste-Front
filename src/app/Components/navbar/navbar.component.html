@@ -1,7 +1,5 @@
 <!-- ToolBar -->
 <mat-toolbar class="toolbar">
-
-
   <button color="primary" *ngIf="!auth.isAuthenticated() && !router.url.endsWith('login') && !router.url.includes('createPassword') " class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se connecter</button>
   <button color="primary" *ngIf="auth.isAuthenticated()" (click)="logout()" class="square-btn login-btn toolbar-btn mt-3" mat-raised-button  routerLink="/login">Se déconnecter</button>
   <div class="button-container mt-3" *ngIf="auth.isAuthenticated()" hidden="true">

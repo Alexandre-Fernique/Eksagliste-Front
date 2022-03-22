@@ -28,6 +28,8 @@ import { CreatePasswordComponent } from "./Page/create-password/create-password.
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {QuestionBoxComponent} from './Components/question-box/question-box.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { QuestionSliderComponent } from './Components/question-slider/question-slider.component';
+
 
 const routes: Routes = [
   {path: "", component: AppComponent},
@@ -51,6 +53,7 @@ const routes: Routes = [
     RootComponent,
     CreatePasswordComponent,
     QuestionBoxComponent,
+    QuestionSliderComponent,
   ],
     imports: [
         BrowserModule,
@@ -68,7 +71,7 @@ const routes: Routes = [
         MatListModule,
         MatToolbarModule,
         ReactiveFormsModule,
-        MatProgressBarModule,
+        MatProgressBarModule
     ],
   exports:[RouterModule],
   providers: [{

@@ -14,15 +14,16 @@
 .item{
   padding-top: 70px;
   padding-bottom: 50px;
-  min-width: 95%;
   justify-content: center;
   position: relative;
   margin: auto;
 }
 
-
-
 .home-img{
   min-width: 200px;
   width: 30%;
+}
+
+.question-card {
+  margin-bot: 50px;
 }

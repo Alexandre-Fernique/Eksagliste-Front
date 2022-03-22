@@ -3,9 +3,17 @@
   <div class="item row">
     <app-vote-box></app-vote-box>
   </div>
+
+
   <div class="item">
-    <app-question-box [question]="questions[1]"></app-question-box>
+    <div class="container row">
+      <div *ngFor="let question of questions" class="col question-card">
+        <app-question-box [question]="question"></app-question-box>
+      </div>
+    </div>
   </div>
+
+
   <div class="item">
     <app-advice-box></app-advice-box>
   </div>

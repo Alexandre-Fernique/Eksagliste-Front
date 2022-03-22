@@ -6,12 +6,10 @@
   text-align: center;
   align-items: center;
   justify-content: center;
-
-  padding: 50px;
   border-radius: 5px;
   width: 90%;
   margin: auto;
-  min-width: 500px;
+  min-width: 250px;
   background-color: rgba(255,255,255,0);
 
 }
@@ -22,15 +20,12 @@
   margin: auto;
   padding-left: 5%;
   padding-right: 5%;
-  width: 90%;
 }
 
 .vote-container {
-
   text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 50px;
   border-radius: 5px;
   border: 0px;
   box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
@@ -67,14 +62,14 @@ img {
   transition-duration: .7s;
   cursor: pointer;
   -webkit-transform: scale(1.5);
-
+  z-index: +1;
 }
 
 .card2:hover{
   transition-duration: .7s;
   cursor: pointer;
   -webkit-transform: scale(1.5);
-
+  z-index: +1;
 }
 
 .vote-title{

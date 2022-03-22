@@ -11,7 +11,12 @@ export class HomeComponent{
 
   questions : Question[] = [
     new Question("Flibustech","Polyçao","Qui est le plus rapide pour livrer ?",25,75),
-    new Question("Flibustech","Polyçao","Qui prépare les meilleures crêpes ?",75,32)
+    new Question("Flibustech","Polyçao","Qui prépare les meilleures crêpes ?",75,32),
+    new Question("Flibustech","Polyçao","Qui est le plus chaud ?",60,85),
+    new Question("Flibustech","Polyçao","Qui est le plus riche ?",80,23),
+    new Question("Flibustech","Polyçao","Qui a le plus de goodies ?",103,10),
+    new Question("Flibustech","Polyçao","Qui cuisine le mieux ?",25,57),
+    new Question("Flibustech","Polyçao","Qui est le meilleur à Mario Kart ?",8,66)
   ]
 
   constructor(public auth: AuthService) {
