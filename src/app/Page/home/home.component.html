@@ -6,8 +6,9 @@
 
 
   <div class="item">
-    <div class="container row">
-      <div *ngFor="let question of questions" class="col question-card">
+    <button (click)="showQuestions()" class="questions-btn">Afficher les questions</button>
+    <div *ngIf="display" class="row">
+      <div *ngFor="let question of questions" class="col-sm-4 question-card">
         <app-question-box [question]="question"></app-question-box>
       </div>
     </div>

@@ -3,12 +3,12 @@
   align-items: center;
   justify-content: center;
 
-  padding: 50px;
+  padding: 20px;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
-  width: 30%;
-  margin: auto;
-  min-width: 250px;
+  width: 95%;
+  margin: 2.5%;
+  height: 400px;
   background-color: rgba(255,255,255,0.9);
 }
 
@@ -64,8 +64,8 @@
   color: white;
   background-color: red;
   border-radius: 5px;
-  width: 40%;
   border: 0px;
+  width: 100%;
   padding: 5%;
   margin: 5%;
 }
@@ -80,7 +80,7 @@
   color: white;
   background-color: #009638;
   border-radius: 5px;
-  width: 40%;
+  width: 100%;
   border: 0px;
   padding: 5%;
   margin: 5%;
