@@ -55,6 +55,7 @@ const routes: Routes = [
     RootComponent,
     CreatePasswordComponent,
     QuestionBoxComponent,
+    QuestionSliderComponent,
   ],
     imports: [
         BrowserModule,
@@ -72,7 +73,7 @@ const routes: Routes = [
         MatListModule,
         MatToolbarModule,
         ReactiveFormsModule,
-        MatProgressBarModule,
+        MatProgressBarModule
     ],
   exports:[RouterModule],
   providers: [{
