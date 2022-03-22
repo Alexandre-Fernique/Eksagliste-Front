@@ -1,0 +1,28 @@
+.home {
+  text-align: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+  background-image: url("/assets/BK.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+
+}
+.item{
+  padding-top: 70px;
+  padding-bottom: 50px;
+  min-width: 95%;
+  justify-content: center;
+  position: relative;
+  margin: auto;
+}
+
+
+
+.home-img{
+  min-width: 200px;
+  width: 30%;
+}

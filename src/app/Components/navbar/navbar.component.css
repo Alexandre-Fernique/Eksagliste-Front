@@ -1,0 +1,84 @@
+/* Toolbar */
+
+.toolbar {
+  border-radius: 0px;
+  position: absolute;
+  z-index: 1000;
+}
+
+.userBtn {
+  margin-left: 68%;
+  width: 100%;
+}
+.mat-toolbar{
+  background-color: transparent;
+}
+.mat-drawer-container{
+  background-color: transparent;
+}
+/*
+.toolbar-btn {
+  background-color: white;
+  border: 1px solid rgba(124,153,255,0.95);
+}
+.toolbar-btn:hover {
+  background-color: rgba(124,153,255,0.95);
+  color: white;
+  border: 1px solid white;
+}*/
+
+.menu-btn {
+  position: absolute;
+  margin-top: 1%;
+  margin-left: 1%;
+  border-radius: 1px;
+  color: white;
+  background-color: rgba(124,153,255,0.83);
+}
+.menu-btn:hover {
+  background-color: rgba(124,153,255,1);
+}
+
+.login-btn {
+  margin-right: 10px;
+  margin-left: auto;
+
+
+}
+.button-container{
+  margin-right: 10px;
+  margin-left: auto;
+}
+
+
+/* Sidenav */
+
+.sidenav-content {
+  margin: auto;
+  width: 100%;
+}
+
+.sidenav {
+  background-color: rgba(124,153,255,0.1);
+  width: 25%;
+}
+.sidenav:hover {
+  background-color: rgba(99,95,98,0.4);
+  transition: 1s;
+}
+
+.sidenav-btn {
+  width: 80%;
+  height: 100%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+  padding-right: 2%;
+  margin-top: 5%;
+  margin-left: 10%;
+  color: white;
+  background-color: rgba(124,153,255,0.83);
+}
+
+.sidenav-btn:hover {
+  background-color: rgba(124,153,255,1);
+}

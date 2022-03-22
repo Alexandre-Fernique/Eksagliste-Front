@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
@@ -13,34 +12,70 @@ import {MatButtonModule} from "@angular/material/button";
 import { ForgotPasswordComponent } from './Page/forgot-password/forgot-password.component';
 import { HomeComponent } from './Page/home/home.component';
 import {MatIconModule} from "@angular/material/icon";
-
-
+import { VoteBoxComponent } from './Components/vote-box/vote-box.component';
+import { AdviceBoxComponent } from './Components/advice-box/advice-box.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { NavbarComponent } from './Components/navbar/navbar.component';
+import { SigninComponent } from './Page/signin/signin.component';
+import { RootComponent } from './Components/root/root.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
+import {NotAuthGuard} from './shared/Auth/notauth.guard'
+import {AuthInterceptor} from "./shared/Auth/auth.interceptor";
+import { CreatePasswordComponent } from "./Page/create-password/create-password.component";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
+import { QuestionBoxComponent } from './Components/question-box/question-box.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 const routes: Routes = [
-  {path: "", component: HomeComponent},
+  {path: "", component: AppComponent},
+  {path: "", redirectTo:"/", pathMatch: 'full'},
   {path:"forgotPassword",component:ForgotPasswordComponent},
-  {path: '**', component: LoginComponent}
-
+  {path:"login",component:LoginComponent,canActivate:[NotAuthGuard]},
+  {path:"signin",component:SigninComponent},
+  {path:"createPassword/:uuid",component:CreatePasswordComponent}
 ]
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ForgotPasswordComponent,
-    HomeComponent
+    HomeComponent,
+    VoteBoxComponent,
+    AdviceBoxComponent,
+    NavbarComponent,
+    SigninComponent,
+    RootComponent,
+    CreatePasswordComponent,
+    QuestionBoxComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatProgressSpinnerModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
-    RouterModule.forRoot(routes),
-    MatButtonModule,
-    MatIconModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        HttpClientModule,
+        MatProgressSpinnerModule,
+        MatFormFieldModule,
+        MatSnackBarModule,
+        MatSelectModule,
+        MatInputModule,
+        RouterModule.forRoot(routes),
+        MatButtonModule,
+        MatIconModule,
+        MatSidenavModule,
+        MatListModule,
+        MatToolbarModule,
+        ReactiveFormsModule,
+        MatProgressBarModule,
+    ],
+  exports:[RouterModule],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
+  bootstrap: [RootComponent]
 })
 export class AppModule { }

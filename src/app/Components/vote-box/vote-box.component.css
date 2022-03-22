@@ -1,0 +1,96 @@
+@import url('http://fonts.cdnfonts.com/css/manga-temple');
+@import url('http://fonts.cdnfonts.com/css/mortal-kombat');
+
+.votes-container {
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  min-width: 500px;
+  background-color: rgba(255,255,255,0);
+
+}
+
+.vote {
+  justify-items: center;
+  text-align: center;
+  margin: auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+}
+
+.vote-container {
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  border-radius: 5px;
+  border: 0px;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+  width: 30%;
+  min-width: 125px;
+  background-color: rgba(255,255,255,0.85);
+}
+
+
+img {
+  width: 100%;
+}
+
+.vote-name {
+  margin-top: 20px;
+}
+
+.card1 {
+  transform: rotateZ(-15deg);
+  perspective-origin: left;
+  padding: 5%;
+  margin: 30px;
+  background-color: red;
+}
+.card2 {
+  padding: 5%;
+  margin: 30px;
+  transform: rotateZ(15deg);
+  perspective-origin: right;
+  background-color: #009638;
+}
+
+.card1:hover{
+  transition-duration: .7s;
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+
+}
+
+.card2:hover{
+  transition-duration: .7s;
+  cursor: pointer;
+  -webkit-transform: scale(1.5);
+
+}
+
+.vote-title{
+  color: white;
+  font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
+  line-height: 100px;
+  font-family: 'Manga Temple', sans-serif;
+  -webkit-text-stroke: 0.05em black;
+}
+.green{
+  color: lawngreen;
+
+}
+p{
+  font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
+  font-family: 'Manga Temple', sans-serif;
+  -webkit-text-stroke: 0.05em black;
+  color: white;
+}

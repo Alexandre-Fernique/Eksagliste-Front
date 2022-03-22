@@ -1,0 +1,12 @@
+<div class="advice-container">
+  <div class="advice-title">
+    <h1>Envie d'envoyer un message?</h1>
+    <h2>Nous la faisons glisser</h2>
+  </div>
+    <mat-form-field class="advice-form" appearance="outline">
+      <mat-label>Laisse un commentaire</mat-label>
+      <textarea #input matInput [formControl]="text"cdkTextareaAutosize></textarea>
+      <mat-hint align="end">{{input.value?.length || 0}}/500</mat-hint>
+    </mat-form-field>
+    <button class="advice-btn" mat-button (click)="send()">Envoyer</button>
+</div>
