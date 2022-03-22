@@ -3,38 +3,21 @@
     <h1>{{question.question}}</h1>
   </div>
   <div class="question-content">
-
     <div class="question-btn row">
-      <button class="btn-gauche col-2">{{question.listeGauche}}</button>
-      <button class="btn-droite col -2">{{question.listeDroite}}</button>
+      <button class="btn-gauche col">{{question.listeGauche}}</button>
+      <button class="btn-droite col">{{question.listeDroite}}</button>
     </div>
 
     <div class="progress">
       <div class="progress-bar pb1" [style.width.%] = "question.percentage">
-        {{question.nbVoteGauche}} votes
+        {{question.nbVoteGauche}}
       </div>
       <div class="progress-bar pb2" [style.width.%] = "100 - question.percentage">
-        {{question.nbVoteDroite}} votes
+        {{question.nbVoteDroite}}
       </div>
     </div>
 
     <button class="info-btn" (click)="getMoreInfo()">Plus d'infos</button>
-    <div *ngIf="moreinfo" class="question-info">
-      <div class="row">
-        <div class="col-2 info1">
-          <p>{{question.listeGauche}}</p>
-          <p>{{question.percentage.toFixed(2)}} %</p>
-          <p>{{question.nbVoteGauche}} votes</p>
-        </div>
-        <div class="col-2 info2">
-          <p>{{question.listeDroite}}</p>
-          <p>{{(100 - question.percentage).toFixed(2)}} %</p>
-          <p>{{question.nbVoteDroite}} votes</p>
-        </div>
-      </div>
-      <p>{{question.nbVoteTotal}} personnes ont participé</p>
-    </div>
-
 
   </div>
 </div>

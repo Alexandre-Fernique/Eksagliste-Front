@@ -26,8 +26,12 @@ import {NotAuthGuard} from './shared/Auth/notauth.guard'
 import {AuthInterceptor} from "./shared/Auth/auth.interceptor";
 import { CreatePasswordComponent } from "./Page/create-password/create-password.component";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
-import { QuestionBoxComponent } from './Components/question-box/question-box.component';
+import {QuestionBoxComponent} from './Components/question-box/question-box.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { QuestionSliderComponent } from './Components/question-slider/question-slider.component';
+import { DisplayInfoComponent } from './Components/display-info/display-info.component';
+import { MatDialogModule } from '@angular/material/dialog';
+
 
 const routes: Routes = [
   {path: "", component: AppComponent},
@@ -50,7 +54,8 @@ const routes: Routes = [
     SigninComponent,
     RootComponent,
     CreatePasswordComponent,
-    QuestionBoxComponent
+    QuestionBoxComponent,
+    QuestionSliderComponent,
   ],
     imports: [
         BrowserModule,
@@ -68,7 +73,7 @@ const routes: Routes = [
         MatListModule,
         MatToolbarModule,
         ReactiveFormsModule,
-        MatProgressBarModule,
+        MatProgressBarModule
     ],
   exports:[RouterModule],
   providers: [{
