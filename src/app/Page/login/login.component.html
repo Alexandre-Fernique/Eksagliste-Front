@@ -1,7 +1,13 @@
 <div class="h-100 body">
   <div class="login mx-auto mt-3">
     <form [formGroup]="form" (ngSubmit)="validate()">
-      <a href="/"><img class="img-fluid" src="assets/eksagliste.png"></a>
+
+
+
+      <div class="col"><a href="/"><img class="img-fluid" src="assets/eksagliste.png"></a></div>
+
+
+
       <div class="row text-center mt-3">
         <h1>Connexion</h1>
       </div>
@@ -24,7 +30,8 @@
           <mat-error>Entrez un mot de passe de 8 caractère minimum</mat-error>
         </mat-form-field>
         <a href="forgotPassword" class="mb-3" >Mot de passe oublié?</a>
-        <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">Se connecter</button>
+        <button mat-raised-button class="mb-3" color="primary" [disabled]="!form.valid" type="submit">Se connecter</button>
+        <mat-icon class="cursor" (click)="router.navigate(['/'])">arrow_back</mat-icon>
       </div>
     </form>
   </div>
