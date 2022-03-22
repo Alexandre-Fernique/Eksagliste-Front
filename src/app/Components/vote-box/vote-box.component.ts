@@ -33,8 +33,6 @@ export class VoteBoxComponent {
             this.liste2=new Liste(data.id,data.title,data.image,data._count.vote)
           }
         }
-
-
       }
     })
     this.listeRequest.voteUser().subscribe({

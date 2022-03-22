@@ -1,0 +1,122 @@
+.question-container {
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 5px 3px 8px;
+  width: 30%;
+  margin: auto;
+  min-width: 300px;
+  background-color: rgba(255,255,255,0.9);
+}
+
+.question-title {
+  padding: 5%;
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.question-content {
+  padding: 5%;
+  width: 100%;
+}
+
+.mat-progress-bar {
+  height: 60px;
+  border-radius: 10px;
+  background-color: rgba(203,15,0,0.95);
+}
+
+.votes {
+  width: initial;
+}
+
+.vote-gauche {
+  text-align: left;
+}
+
+.vote-droite {
+  text-align: right;
+}
+
+.progress {
+  height: 60px;
+  border-radius: 10px;
+}
+
+.pb1 {
+  background-color: red;
+}
+
+.pb2{
+  background-color: #009638;
+}
+
+.question-btn {
+
+}
+
+.btn-gauche {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  width: 40%;
+  border: 0px;
+  padding: 5%;
+  margin: 5%;
+}
+.btn-gauche:hover {
+  transition-duration: .2s;
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+  border: 2px solid black;
+}
+
+.btn-droite {
+  color: white;
+  background-color: #009638;
+  border-radius: 5px;
+  width: 40%;
+  border: 0px;
+  padding: 5%;
+  margin: 5%;
+}
+.btn-droite:hover {
+  transition-duration: .2s;
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+  border: 2px solid black;
+}
+
+.question-info {
+  transition-duration: .5s;
+  color: dodgerblue;
+}
+
+.info-btn {
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 5px;
+  border: 0px;
+  padding: 2%;
+  margin: 5%;
+}
+.info-btn:hover {
+  transition-duration: .2s;
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+}
+
+.info1{
+  padding: 5%;
+  width: 50%;
+}
+
+.info2{
+  padding: 5%;
+  width: 50%;
+}
