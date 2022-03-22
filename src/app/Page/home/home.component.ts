@@ -11,7 +11,7 @@ import {Observable} from "rxjs";
 })
 export class HomeComponent implements OnInit {
 
-  questions!: Question[];
+  questions!: Observable<Question[]>;
 
   constructor(public auth: AuthService,
               public questionService: QuestionService) {
@@ -19,8 +19,9 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-        this.questions = this.questionService.get()
-    }
+    console.log("ngOnInit")
+    this.questions = this.questionService.get()
+  }
 
 
 

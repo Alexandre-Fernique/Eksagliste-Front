@@ -4,7 +4,7 @@
     <app-vote-box></app-vote-box>
   </div>
   <div class="item">
-    <li *ngFor="let question of questions" class="collection-item">
+    <li *ngFor="let question of questions | async" class="collection-item">
       <app-question-box [question]="question"></app-question-box>
     </li>
   </div>
