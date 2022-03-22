@@ -1,1 +1,88 @@
-<p>signin works!</p>
+<div class="h-100 body pt-3">
+  <div class="login mx-auto ">
+    <form [formGroup]="form" (ngSubmit)="validate()">
+      <div class="d-flex justify-content-center">
+        <img class="image " src="assets/eksagliste.png">
+      </div>
+
+      <div class="row text-center mt-3">
+        <h1>Créer un compte</h1>
+        <h3 class="text-danger" [hidden]="!erreur">{{"Erreur"}}</h3>
+        <h3 class="text-danger" [hidden]="!erreur">Veuillez contacter <a href="mailto:support@eksagliste.me">support@eksagliste.me</a></h3>
+      </div>
+
+      <div class="row mt-3">
+        <mat-form-field  appearance="outline" floatLabel="always">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="jean.louis" formControlName="email" required>
+          <span matSuffix>@etu.umontpellier.fr</span>
+          <mat-error>Entrez une Url</mat-error>
+        </mat-form-field>
+      </div>
+        <div class="row mt-3">
+          <div class="col">
+            <mat-form-field appearance="outline" class="d-inline">
+              <mat-label>Mot de passe</mat-label>
+              <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+              <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error>Entrez un mot de passe de 8 caractère minimum</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field  appearance="outline" class="d-inline">
+              <mat-label>Confirmation de Mot de passe</mat-label>
+              <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+              <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
+                <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+              <mat-error *ngIf="form.hasError('notSame')">Les mot de passe ne sont pas identique</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      <div class="row mt-3">
+        <div class="col">
+          <mat-form-field appearance="outline" class="d-inline">
+            <mat-label>Formation</mat-label>
+            <mat-select (selectionChange)="changeform()" formControlName="formation" required>
+              <mat-option *ngFor="let formation of formations" [value]="formation">
+                {{formation}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field appearance="outline" class="d-inline">
+            <mat-label>Année</mat-label>
+            <mat-select formControlName="annee" required>
+              <ng-container *ngFor="let annee of annees">
+                <mat-option  [value]="annee" >
+                  {{annee}}
+                </mat-option>
+
+              </ng-container>
+
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+         <mat-icon class="cursor" (click)="router.navigate(['/'])">arrow_back</mat-icon>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button mat-raised-button color="primary" [disabled]="!form.valid" type="submit">S'inscrire</button>
+
+        </div>
+
+      </div>
+
+
+
+
+
+    </form>
+  </div>
+</div>
+
