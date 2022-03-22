@@ -55,8 +55,6 @@ const routes: Routes = [
     RootComponent,
     CreatePasswordComponent,
     QuestionBoxComponent,
-    QuestionSliderComponent,
-    DisplayInfoComponent
   ],
     imports: [
         BrowserModule,
@@ -75,7 +73,6 @@ const routes: Routes = [
         MatToolbarModule,
         ReactiveFormsModule,
         MatProgressBarModule,
-        MatDialogModule
     ],
   exports:[RouterModule],
   providers: [{
@@ -85,6 +82,4 @@ const routes: Routes = [
   }],
   bootstrap: [RootComponent]
 })
-export class AppModule{
-
-}
+export class AppModule { }
