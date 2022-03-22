@@ -79,7 +79,7 @@ img {
 
 .vote-title{
   color: white;
-  font-size: 4em;
+  font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
   line-height: 100px;
   font-family: 'Manga Temple', sans-serif;
   -webkit-text-stroke: 0.05em black;
@@ -89,7 +89,7 @@ img {
 
 }
 p{
-  font-size: 4em;
+  font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
   font-family: 'Manga Temple', sans-serif;
   -webkit-text-stroke: 0.05em black;
   color: white;
