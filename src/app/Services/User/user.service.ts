@@ -15,5 +15,8 @@ export class UserService {
   setPassword(uuid:string,data:object){
     return this.http.post(environment.api+"/users/updatePassword/"+uuid,data,this.httpOptions);
   }
+  create(data:any){
+    return this.http.post(environment.api+"/users/signin",data,this.httpOptions);
+  }
 
 }
