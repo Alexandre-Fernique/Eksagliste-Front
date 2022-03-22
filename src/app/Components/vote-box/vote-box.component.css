@@ -93,10 +93,11 @@ img {
 .vote-title{
   color: white;
   font-size: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));
+  margin-bottom: 50px;
 
   font-family: 'Manga Temple', sans-serif;
   -webkit-text-stroke: 0.05em black;
-  
+
 }
 .green{
   color: lawngreen;

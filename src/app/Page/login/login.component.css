@@ -1,5 +1,5 @@
 .login{
-  width: 485px;
+  max-width: 600px;
   border: solid 1px grey;
   border-radius: 8px;
   padding: 0 5% 5% 5%;
@@ -9,4 +9,6 @@
 .cursor{
   cursor: pointer;
 }
-
+.image{
+  max-height: 200px;
+}

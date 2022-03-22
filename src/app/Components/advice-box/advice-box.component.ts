@@ -29,7 +29,7 @@ export class AdviceBoxComponent {
     this.post.create(this.text.value).subscribe({
       error:(e)=>{
 
-        this.openSnackBar("Erreur")
+        this.openSnackBar("Il faut être connecté")
 
       },complete:()=>{
         this.openSnackBar("Message envoyé")
