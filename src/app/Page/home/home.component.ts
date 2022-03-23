@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit {
   getQuestions(){
     this.questionService.get().subscribe(questions => {
         this.questions = questions
+        console.log(questions);
       }
     )
   }
@@ -37,9 +38,6 @@ export class HomeComponent implements OnInit {
   }
 
   display : boolean = false
-  constructor(public auth: AuthService) {
-    this.auth.handleAuthentication();
-  }
 
   showQuestions(){
     this.display = !this.display;

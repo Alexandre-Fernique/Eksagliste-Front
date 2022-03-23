@@ -22,14 +22,20 @@ export class QuestionService {
     var listeDeDroiteId: number = 0
     var listeDeGaucheId: number = 0
     for (var j=0; j<json.listes.length; j++) {
-      if (json.listes[j].liste === "BabyListe") {
+      if (json.listes[j].liste === "Polyçao") {
         listeDeDroite = json.listes[j].liste
         voteListeDeDroite = json.listes[j].vote
         listeDeDroiteId = json.listes[j].id
+        console.log("ld ="+ json.listes[j].liste)
+        console.log("vd ="+json.listes[j].vote)
+        console.log("id ="+json.listes[j].id)
       } else {
         listeDeGauche = json.listes[j].liste
         voteListeDeGauche = json.listes[j].vote
         listeDeGaucheId = json.listes[j].id
+        console.log("lg ="+ json.listes[j].liste)
+        console.log("vg ="+json.listes[j].vote)
+        console.log("ig ="+json.listes[j].id)
       }
     }
     return new Question(json.questionId, listeDeGauche, listeDeDroite, json.question, voteListeDeGauche, voteListeDeDroite, listeDeDroiteId, listeDeGaucheId)
