@@ -33,7 +33,7 @@
           <div class="col">
             <mat-form-field  appearance="outline" class="d-inline">
               <mat-label>Confirmation de Mot de passe</mat-label>
-              <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword">
+              <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmPassword" [errorStateMatcher]="matcher">
               <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmPassword">
                 <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
               </button>
@@ -77,11 +77,9 @@
         </div>
 
       </div>
-
-
-
-
-
+      <div class="d-flex justify-content-center">
+        <mat-spinner diameter="50" *ngIf="loadingData"></mat-spinner>
+      </div>
     </form>
   </div>
 </div>

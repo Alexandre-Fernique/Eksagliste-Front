@@ -36,5 +36,12 @@ export class HomeComponent implements OnInit {
     this.getQuestions()
   }
 
+  display : boolean = false
+  constructor(public auth: AuthService) {
+    this.auth.handleAuthentication();
+  }
 
+  showQuestions(){
+    this.display = !this.display;
+  }
 }

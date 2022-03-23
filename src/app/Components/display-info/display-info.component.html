@@ -1,0 +1,19 @@
+<div class="display-container">
+  <div class="display-info">
+    <div class="row">
+      <div class="col-2 info1">
+        <p><strong>{{this.data.element.listeGauche}}</strong></p>
+        <p>{{this.data.element.percentage.toFixed(2)}} %</p>
+        <p>{{this.data.element.nbVoteGauche}} votes</p>
+      </div>
+      <div class="col-2 info2">
+        <p><strong>{{this.data.element.listeDroite}}</strong></p>
+        <p>{{(100 - this.data.element.percentage).toFixed(2)}} %</p>
+        <p>{{this.data.element.nbVoteDroite}} votes</p>
+      </div>
+    </div>
+    <p>{{this.data.element.nbVoteTotal}} personnes ont participé</p>
+  </div>
+  <button class="info-btn" (click)="cancel()">Quitter</button>
+</div>
+

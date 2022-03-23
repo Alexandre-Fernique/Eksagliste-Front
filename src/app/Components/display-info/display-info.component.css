@@ -1,0 +1,35 @@
+.display-container{
+  width: 80%;
+  margin:auto;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.display-info{
+  color: dodgerblue;
+}
+.info1{
+  color: red;
+  padding: 5%;
+  width: 50%;
+}
+
+.info2{
+  color: #009638;
+  padding: 5%;
+  width: 50%;
+}
+
+.info-btn {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  border: 0px;
+  padding: 2%;
+  margin: 5%;
+}
+.info-btn:hover {
+  transition-duration: .2s;
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
+}

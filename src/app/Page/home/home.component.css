@@ -14,15 +14,37 @@
 .item{
   padding-top: 70px;
   padding-bottom: 50px;
-  min-width: 95%;
   justify-content: center;
+  text-align: center;
+  align-items: center;
   position: relative;
   margin: auto;
+  width: 90%;
 }
-
-
 
 .home-img{
   min-width: 200px;
   width: 30%;
+}
+
+.question-card {
+  margin-bot: 50px;
+}
+
+.questions-btn{
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: 50%;
+  color: white;
+  background-color: dodgerblue;
+  border-radius: 10px;
+  border: 0px;
+  margin: 5%;
+}
+.questions-btn:hover{
+  transition-duration: .2s;
+  cursor: pointer;
+  -webkit-transform: scale(1.2);
 }

@@ -1,7 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import {AbstractControl, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators} from "@angular/forms";
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup, FormGroupDirective,
+  NgForm,
+  ValidationErrors,
+  ValidatorFn,
+  Validators
+} from "@angular/forms";
 import {UserService} from "../../Services/User/user.service";
 import {Router} from "@angular/router";
+import {ErrorStateMatcher} from "@angular/material/core";
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+    const invalidCtrl = !!(control && control.invalid && control.parent!.dirty);
+    const invalidParent = !!(control && control.parent && control.parent.invalid && control.parent.dirty);
+
+    return (invalidCtrl || invalidParent);
+  }
+}
 
 @Component({
   selector: 'app-signin',
@@ -14,6 +32,8 @@ export class SigninComponent implements OnInit {
   erreur=false;
   annees=[1,2,3,4,5]
   formations=["PEIP","IG","MI","MSI","EGC","STE","SE","MEA","MAT","DO","GBA"]
+  loadingData=false;
+  matcher = new MyErrorStateMatcher();
 
   checkPasswords: ValidatorFn = (group: AbstractControl):  ValidationErrors | null => {
     let pass = group.get('password')?.value;
@@ -46,16 +66,18 @@ export class SigninComponent implements OnInit {
   ngOnInit(): void {
   }
   validate(){
+    this.loadingData=true
     let data = this.form.value
     data.email = data.email + "@etu.umontpellier.fr"
     this.user.create(data).subscribe({
       error:(e)=>{
         console.log(e)
+        this.loadingData=false
         this.erreur = true
 
       },
       complete:()=>{
-        console.log("ok")
+        this.loadingData=false
         this.router.navigate(['/']);
 
       }

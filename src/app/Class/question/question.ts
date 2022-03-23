@@ -29,8 +29,12 @@ export class Question {
   }
 
   get percentage(){
-    return 100 * (this.nbVoteGauche / this.nbVoteTotal)
+    if(this.nbVoteTotal == 0){
+      return 50
+    }
+    else {
+      return 100 * (this.nbVoteGauche / this.nbVoteTotal)
+    }
   }
-
 }
 
