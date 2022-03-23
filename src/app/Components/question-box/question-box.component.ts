@@ -1,10 +1,12 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Question} from "../../Class/question/question";
 import {Liste} from "../../Class/liste";
 import {ListeService} from "../../Services/Liste/liste.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {QuestionService} from "../../Services/Question/question.service";
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {DisplayInfoComponent} from "../display-info/display-info.component";
+
 
 @Component({
   selector: 'app-question-box',
@@ -12,12 +14,17 @@ import {DisplayInfoComponent} from "../display-info/display-info.component";
   styleUrls: ['./question-box.component.css']
 })
 export class QuestionBoxComponent{
-  @Input() question : Question = new Question()
+  @Input() question! : Question
   liste1:Liste =new Liste(0,"NaN","erreur.png",-1)
   liste2:Liste =new Liste(0,"NaN","erreur.png",-1)
   moreinfo : boolean = false
 
-  constructor(public listeRequest:ListeService,private _snackBar: MatSnackBar, private dialog : MatDialog) {
+  @Output() isChangeEvent = new EventEmitter<number>();
+
+  constructor(public listeRequest:ListeService,
+              private _snackBar: MatSnackBar,
+              public questionService: QuestionService,
+              private dialog : MatDialog) {
     this.getListe()
   }
 
@@ -33,6 +40,15 @@ export class QuestionBoxComponent{
         }
       }
     })
+  }
+
+  vote(listeId: number){
+    console.log(this.question)
+    if(this.question != null) {
+      console.log("ici")
+      this.questionService.vote(listeId, this.question.questionId)
+      this.isChangeEvent.emit(1)
+    }
   }
 
   openSnackBar(text:string) {
