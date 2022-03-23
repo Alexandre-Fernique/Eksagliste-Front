@@ -4,7 +4,8 @@
     <button class="vote-container card1 col-2" (click)="vote(liste1)">
       <div>
         <img *ngIf="liste2.vote!=-1" [src]="liste1.image">
-        <p class="mt-1" *ngIf="liste2.vote!=-1">{{liste1.vote}}</p>
+        <p  *ngIf="liste2.vote!=-1">{{todayVote1}}</p>
+        <p  *ngIf="liste2.vote!=-1" class="downParagraphe">Total {{liste1.vote}}</p>
         <mat-spinner class="mx-auto" *ngIf="liste2.vote==-1"></mat-spinner>
         <mat-icon *ngIf="liste1.id==userVote" class="green">done</mat-icon>
       </div>
@@ -12,7 +13,8 @@
     <button class="vote-container card2 col-2" (click)="vote(liste2)">
       <div>
         <img *ngIf="liste2.vote!=-1" [src]="liste2.image">
-        <p class="mt-1" *ngIf="liste2.vote!=-1">{{liste2.vote}}</p>
+        <p  *ngIf="liste2.vote!=-1">{{todayVote2}}</p>
+        <p  *ngIf="liste2.vote!=-1" class="downParagraphe">Total {{liste2.vote}}</p>
         <mat-spinner class="mx-auto" *ngIf="liste2.vote==-1"></mat-spinner>
         <mat-icon *ngIf="liste2.id==userVote" class="green">done</mat-icon>
       </div>

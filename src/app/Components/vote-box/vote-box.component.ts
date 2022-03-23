@@ -11,6 +11,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 export class VoteBoxComponent {
   liste1:Liste =new Liste(0,"NaN","erreur.png",-1)
   liste2:Liste =new Liste(0,"NaN","erreur.png",-1)
+  todayVote1 = 0
+  todayVote2 = 0
   userVote:null|number=null
   constructor(public listeRequest:ListeService,private _snackBar: MatSnackBar) {
     this.getVote()
@@ -24,6 +26,20 @@ export class VoteBoxComponent {
     });
   }
   getVote(){
+    this.listeRequest.getVotejour().subscribe({
+      next:(data)=>{
+        for(let donne of data){
+          let conversion = new Date(donne.date)
+          if(conversion.getDate() == new Date().getDate()){
+            if(donne.listeId==1){
+            this.todayVote1 = donne._count.userId
+            }else {
+              this.todayVote2 = donne._count.userId
+            }
+          }
+        }
+      }
+    })
     this.listeRequest.get().subscribe({
       next:(res)=>{
         for(let data of res){

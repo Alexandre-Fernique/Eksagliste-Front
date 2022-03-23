@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api:"https://eksagliste.herokuapp.com/"
+  api:"https://eksagliste.herokuapp.com"
 };

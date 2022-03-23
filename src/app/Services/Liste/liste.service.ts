@@ -8,15 +8,12 @@ import {environment} from "../../../environments/environment";
 export class ListeService {
 
   httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
-
   constructor(private http: HttpClient) {
-
   }
   vote(id:number){
     let data={
       liste:id
     }
-
     return this.http.post(environment.api+"/liste/vote",data,this.httpOptions)
   }
   get(){
@@ -28,6 +25,15 @@ export class ListeService {
         vote:number
       }
     }>>(environment.api+"/liste/count",this.httpOptions)
+  }
+  getVotejour(){
+    return this.http.get<Array<{
+      date:Date,
+      listeId:number,
+      _count:{
+        userId:number
+      }
+    }>>(environment.api+"/liste/countJour",this.httpOptions)
   }
   voteUser(){
     return  this.http.get<any>(environment.api+"/liste/voteUser",this.httpOptions)
