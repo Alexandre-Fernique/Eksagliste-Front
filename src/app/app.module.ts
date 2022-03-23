@@ -29,7 +29,7 @@ import {MatSnackBarModule} from "@angular/material/snack-bar";
 import {QuestionBoxComponent} from './Components/question-box/question-box.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { QuestionSliderComponent } from './Components/question-slider/question-slider.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
 
 
 const routes: Routes = [
@@ -72,7 +72,8 @@ const routes: Routes = [
         MatListModule,
         MatToolbarModule,
         ReactiveFormsModule,
-        MatProgressBarModule
+        MatProgressBarModule,
+        MatDialogModule
     ],
   exports:[RouterModule],
   providers: [{
