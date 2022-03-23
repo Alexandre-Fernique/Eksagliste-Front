@@ -10,6 +10,7 @@
         <mat-icon *ngIf="liste1.id==userVote" class="green">done</mat-icon>
       </div>
     </button>
+    <div class="col-sm-12 col-lg-2  "><img class="vsImage" src="assets/vs.png"></div>
     <button class="vote-container card2 col-2" (click)="vote(liste2)">
       <div>
         <img *ngIf="liste2.vote!=-1" [src]="liste2.image">

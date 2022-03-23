@@ -110,5 +110,8 @@ p{
   color: white;
 }
 .downParagraphe{
-  margin-top: 40px;
+  margin-top: 20%;
+}
+.vsImage{
+  max-width: 200px;
 }
