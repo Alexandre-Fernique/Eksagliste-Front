@@ -66,7 +66,7 @@ export class VoteBoxComponent {
   vote(liste : Liste){
     this.listeRequest.vote(liste.id).subscribe({
       error:()=>{
-        this.openSnackBar("Il faut que tu sois connecter")
+        this.openSnackBar("Il faut que tu sois connecté.e")
       },
       complete:()=>{
         this.openSnackBar("Vote pris en compte")

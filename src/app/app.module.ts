@@ -30,15 +30,20 @@ import {QuestionBoxComponent} from './Components/question-box/question-box.compo
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import { QuestionSliderComponent } from './Components/question-slider/question-slider.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { Err404Component } from './Page/err404/err404.component';
+import { ActivateComponent } from './Page/activate/activate.component';
+import { ConfirmSigninComponent } from './Page/confirm-signin/confirm-signin.component';
 
 
 const routes: Routes = [
   {path: "", component: AppComponent},
-  {path: "", redirectTo:"/", pathMatch: 'full'},
   {path:"forgotPassword",component:ForgotPasswordComponent},
   {path:"login",component:LoginComponent,canActivate:[NotAuthGuard]},
   {path:"signin",component:SigninComponent},
-  {path:"createPassword/:uuid",component:CreatePasswordComponent}
+  {path:"createPassword/:uuid",component:CreatePasswordComponent},
+  {path:"activate/:uuid",component:ActivateComponent},
+  {path:"confirmSignin/:email",component:ConfirmSigninComponent},
+  {path: "**", component: Err404Component},
 ]
 
 @NgModule({
@@ -55,6 +60,9 @@ const routes: Routes = [
     CreatePasswordComponent,
     QuestionBoxComponent,
     QuestionSliderComponent,
+    Err404Component,
+    ActivateComponent,
+    ConfirmSigninComponent,
   ],
     imports: [
         BrowserModule,

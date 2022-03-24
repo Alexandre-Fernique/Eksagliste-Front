@@ -11,6 +11,7 @@ import {
 import {UserService} from "../../Services/User/user.service";
 import {Router} from "@angular/router";
 import {ErrorStateMatcher} from "@angular/material/core";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
@@ -48,9 +49,8 @@ export class SigninComponent implements OnInit {
     annee: new FormControl("",[Validators.required]),
 
   },{validators:this.checkPasswords});
-  //TODO faire la validation identique
 
-  constructor(public user:UserService,public router:Router) { }
+  constructor(public user:UserService,public router:Router,private _snackBar: MatSnackBar) { }
   changeform(){
     if (this.form.get("formation")!.value == "PEIP"){
       this.annees=[1,2]
@@ -61,6 +61,13 @@ export class SigninComponent implements OnInit {
       this.annees=[3,4,5]
     }
 
+  }
+  openSnackBar(text:string) {
+    this._snackBar.open(text, '', {
+      horizontalPosition: "left",
+      verticalPosition: "top",
+      duration:3000
+    });
   }
 
   ngOnInit(): void {
@@ -78,7 +85,7 @@ export class SigninComponent implements OnInit {
       },
       complete:()=>{
         this.loadingData=false
-        this.router.navigate(['/']);
+        this.router.navigate(['/confirmSignin/'+this.form.get("email")!.value]);
 
       }
     })

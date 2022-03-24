@@ -17,6 +17,9 @@ export class AuthService {
   expiresAt: Number = 0;
 
   constructor(public router: Router,private http: HttpClient) {}
+  public activate(uuid:string){
+    return this.http.put<{acess_token:string}>(environment.api+"/users/activate/"+uuid, this.httpOptions)
+  }
 
   public login(email:string,password:string) {
     let data={

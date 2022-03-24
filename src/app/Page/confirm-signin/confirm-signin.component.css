@@ -1,0 +1,14 @@
+.login{
+  max-width: 600px;
+  border: solid 1px grey;
+  border-radius: 8px;
+  padding: 0 5% 5% 5%;
+
+  background-color: rgba(255,255,255,0.95);
+}
+.cursor{
+  cursor: pointer;
+}
+.image{
+  max-height: 200px;
+}
